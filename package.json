@@ -1,0 +1,27 @@
+{
+  "name": "full-backend-zero",
+  "version": "1.0.0",
+  "description": "Hoi Dan IT Fullstack backend zero",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fehuyngo/node-express-mongo.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "fehuyngo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fehuyngo/node-express-mongo/issues"
+  },
+  "homepage": "https://github.com/fehuyngo/node-express-mongo#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
