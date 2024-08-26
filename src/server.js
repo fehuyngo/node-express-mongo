@@ -2,7 +2,6 @@ const express = require('express');//commonjs
 const path = require('path');//commonjs
 require('dotenv').config();
 
-console.log(">>> check env:", process.env)
 // import express from 'express';//es modules
 const app = express(); // app express
 const port = process.env.PORT || 8888; //port
@@ -12,9 +11,12 @@ const hostname = process.env.HOST_NAME || 'localhost';
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs')
 
+//config statis files
+app.use(express.static(path.join(__dirname, 'public')))
+
 //Khai báo route
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('Hello World! & nodemon')
 })
 
 app.get('/abc', (req, res) => {
