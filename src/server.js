@@ -7,7 +7,11 @@ const connection = require('./config/database');
 // import express from 'express';//es modules
 const app = express(); // app express
 const port = process.env.PORT || 8888; //port
-const hostname = process.env.HOST_NAME || 'localhost';
+const hostname = process.env.HOST_NAME;
+
+// config req.body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //config template engine
 configViewEngine(app);
@@ -18,12 +22,12 @@ app.use('/', webRoutes);
 //test connection
 
 // simple query
-connection.query(
-    'SELECT * FROM Users',
-    (err, results, fields) => {
-        console.log(">>> results= ", results);
-    }
-);
+// connection.query(
+//     'SELECT * FROM Users',
+//     (err, results, fields) => {
+//         console.log(">>> results= ", results);
+//     }
+// );
 
 app.listen(port, hostname, () => {
     console.log(`Example app listening on port ${port}`)
