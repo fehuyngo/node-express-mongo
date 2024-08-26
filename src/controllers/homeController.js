@@ -1,5 +1,15 @@
+const connection = require('../config/database');
+
 const getHomepage = (req, res) => {
-    res.send('Hello World! & nodemon')
+    connection.query(
+        'SELECT * FROM Users',
+        (err, results, fields) => {
+            users = results;
+            console.log(">>> results= ", results);
+
+            res.send(JSON.stringify(users));
+        }
+    );
 }
 
 const getABC = (req, res) => {
