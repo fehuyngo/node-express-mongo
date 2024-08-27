@@ -19,6 +19,7 @@ const getCreatePage = (req, res) => {
 }
 
 const getUpdatePage = (req, res) => {
+    const userId = req.params.id;
     res.render('edit.ejs')
 }
 
