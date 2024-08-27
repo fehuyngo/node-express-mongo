@@ -18,6 +18,10 @@ const getCreatePage = (req, res) => {
     res.render('create.ejs')
 }
 
+const getUpdatePage = (req, res) => {
+    res.render('edit.ejs')
+}
+
 const postCreateUser = async (req, res) => {
     const { email, myname, city } = req.body;
 
@@ -33,5 +37,6 @@ module.exports = {
     getABC,
     getHoiDanIT,
     postCreateUser,
-    getCreatePage
+    getCreatePage,
+    getUpdatePage
 }
