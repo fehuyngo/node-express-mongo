@@ -72,3 +72,7 @@ td {
 tr:hover {
     background-color: #ccc;
 }
+
+.d-none {
+  display: none;
+}
