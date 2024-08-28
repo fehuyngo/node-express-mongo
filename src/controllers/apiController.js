@@ -20,7 +20,17 @@ const postCreateUserAPI = async (req, res) => {
     })
 }
 
+const putUpdateUserAPI = async (req, res) => {
+    const { email, name, city, userId } = req.body;
+    let user = await User.updateOne({ _id: userId }, { email, name, city });
+    return res.status(200).json({
+        EC: 0,
+        data: user
+    })
+}
+
 module.exports = {
     getUsersAPI,
-    postCreateUserAPI
+    postCreateUserAPI,
+    putUpdateUserAPI
 }
