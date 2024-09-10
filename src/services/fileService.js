@@ -23,7 +23,7 @@ const uploadSingleFile = async (fileObject) => {
         await fileObject.mv(finalPath);
         return {
             status: 'success',
-            path: finalPath,
+            path: finalName,
             error: null
         }
     } catch (error) {

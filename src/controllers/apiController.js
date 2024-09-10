@@ -47,9 +47,11 @@ const postUploadSingleFileApi = async (req, res) => {
     }
 
     let result = await uploadSingleFile(req.files.image);
-    console.log(">>> check result: ", result);
 
-    return res.send("ok single")
+    return res.status(200).json({
+        EC: 0,
+        data: result
+    })
 }
 
 const postUploadMultipleFilesApi = async (req, res) => {
