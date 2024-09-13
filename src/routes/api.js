@@ -9,6 +9,8 @@ const { postCreateCustomer, postCreateArrayCustomer,
 } = require('../controllers/customerController');
 const { postCreateProject, getAllProject, deleteProject, updateProject
 } = require('../controllers/projectController');
+const { postCreateTask, getAllTask, deleteTask, updateTask
+} = require('../controllers/taskController');
 
 routerAPI.get('/users', getUsersAPI);
 routerAPI.post('/users', postCreateUserAPI);
@@ -29,6 +31,11 @@ routerAPI.post('/projects', postCreateProject);
 routerAPI.get('/projects', getAllProject);
 routerAPI.delete('/projects', deleteProject);
 routerAPI.put('/projects', updateProject);
+
+routerAPI.post('/tasks', postCreateTask);
+routerAPI.get('/tasks', getAllTask);
+routerAPI.delete('/tasks', deleteTask);
+routerAPI.put('/tasks', updateTask);
 
 routerAPI.get('/info', (req, res) => {
     return res.status(200).json({
