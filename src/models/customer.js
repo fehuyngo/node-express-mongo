@@ -13,11 +13,11 @@ const customerSchema = new mongoose.Schema({
     description: String
 }, {
     timestamps: true, // createdAt, updatedAt
-    statics: {
-        findByName(name) {
-            return this.find({ name: new RegExp(name, 'i') });
-        }
-    }
+    // statics: {
+    //     findByName(name) {
+    //         return this.find({ name: new RegExp(name, 'i') });
+    //     }
+    // }
 });
 
 customerSchema.plugin(mongoose_delete, { overrideMethods: 'all' });

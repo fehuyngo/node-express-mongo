@@ -30,7 +30,7 @@ app.use('/v1/api/', apiRoutes);
     //test connection
     try {
         //using mongoose
-        // await connection();
+        await connection();
 
         //using mongodb driver
         // Connection URL
@@ -43,7 +43,10 @@ app.use('/v1/api/', apiRoutes);
         await client.connect();
         console.log('Connected successfully to server');
         const db = client.db(dbName);
-        const collection = db.collection('documents');
+        const collection = db.collection('customers');
+
+        // collection.insertOne({ "name": "Hoi Dan IT" })
+        // collection.insertOne({ "address": "ha noi" })
 
         app.listen(port, hostname, () => {
             console.log(`Backend zero app listening on port ${port}`)
