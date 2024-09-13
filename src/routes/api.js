@@ -7,6 +7,8 @@ const { postCreateCustomer, postCreateArrayCustomer,
     getAllCustomers, putUpdateCustomers,
     deleteACustomer, deleteArrayCustomer
 } = require('../controllers/customerController');
+const { postCreateProject
+} = require('../controllers/projectController');
 
 routerAPI.get('/users', getUsersAPI);
 routerAPI.post('/users', postCreateUserAPI);
@@ -34,5 +36,8 @@ routerAPI.get('/info/:name/:address', (req, res) => {
         data: req.params
     })
 });
+
+
+routerAPI.post('/projects', postCreateProject);
 
 module.exports = routerAPI;
