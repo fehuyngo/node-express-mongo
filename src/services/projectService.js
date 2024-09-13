@@ -15,6 +15,14 @@ module.exports = {
             let newResult = await myProject.save();
             return newResult;
         }
+        if (data.type === "ADD-TASKS") {
+            let myProject = await Project.findById(data.projectId).exec();
+            for (let i = 0; i < data.taskArr.length; i++) {
+                myProject.tasks.push(data.taskArr[i]);
+            }
+            let newResult = await myProject.save();
+            return newResult;
+        }
         if (data.type === "REMOVE-USERS") {
             let myProject = await Project.findById(data.projectId).exec();
             for (let i = 0; i < data.usersArr.length; i++) {
